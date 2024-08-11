@@ -1,3 +1,24 @@
 {
-  "extends": "astro/tsconfigs/base"
-}
+    "compilerOptions": {
+      "target": "es6",                          // Versión de ECMAScript que quieres como output (es6, es5, etc.)
+      "module": "commonjs",                     // Sistema de módulos a utilizar (commonjs, esnext, etc.)
+      "strict": true,                           // Habilita todas las comprobaciones estrictas de TypeScript
+      "esModuleInterop": true,                  // Habilita la interoperabilidad con módulos ES
+      "forceConsistentCasingInFileNames": true, // Forza el uso consistente de mayúsculas y minúsculas en los nombres de archivos
+      "skipLibCheck": true,                     // Omite la comprobación de tipo en archivos de definición
+      "moduleResolution": "node",               // Método de resolución de módulos
+      "isolatedModules": true,                  // Tratar cada archivo como un módulo aislado
+      "jsx": "react-jsx",                       // Soporte para JSX en proyectos React
+      "allowSyntheticDefaultImports": true,     // Permite importar el valor `default` desde módulos que no tienen exportación por defecto
+      "sourceMap": true,                        // Genera archivos de source map para depuración
+      "outDir": "./dist",                       // Directorio de salida para los archivos compilados
+      "baseUrl": ".",                           // Base URL para la resolución de módulos
+      "paths": {   
+        "@/*" : ["./src/*"]                     // Mapear alias de rutas para importaciones
+
+      }
+    },
+    "include": ["src"],   // Archivos y directorios a incluir en la compilación
+    "exclude": ["node_modules"]  // Archivos y directorios a excluir de la compilación
+  }
+  
