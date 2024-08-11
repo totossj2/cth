@@ -11,12 +11,13 @@ import Header from '@/sections/Header.astro';
 
 <Layout title="CTH .">
 	<main>
+		<Header />
 		<Hero />
 		<Bento />
 		<!--Boton ver mas, lleva al catalogo -->
 		<div class="flex justify-center">
-			<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-			  <a href="/catalogo" class="no-underline">Ver más servicios</a>
+			<button class="bg-red-500 hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded">
+			  <a href="/catalogo.astro" class="no-underline">Ver más servicios</a>
 			</button>
 		  </div>
 		<Video />
