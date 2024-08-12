@@ -1,95 +1,46 @@
-<header id="header-nav" class="fixed w-full h-20 py-4 z-50 top-0 px-8 lg:px-0">
-    <div class="grid grid-cols-3 max-w-7xl mx-auto items-center justify-between">
-        <a class="col-span-1 relative z-10">
-            <a href="/" class=" absolute top-1 p-2">
-                <img src="/src/components/cth-logo-02.png" class="absolute w-24 m-auto blur-sm opacity-0 transition-opacity duration-300 hover:opacity-50" />      
-                <img src="/src/components/cth-logo-02.png" class="w-24" />
-            </a>  
-        </a>
-        <nav class="col-span-1 justify-self-center hidden md:block">
-            <ul class="flex gap-4">
-                <li>
-                    <a class='hover:underline hover:text-red-700 text-white' href="/catalogo">SERVICIOS</a>
-                </li>
-                <li>
-                    <a class='hover:underline hover:text-red-700 text-white' href="/nosotros">NOSOTROS</a>
-                </li>
-            </ul>
-        </nav>
-        <a href="#" class="text-white font-semibold border rounded-full border-black bg-red-700 px-4 py-2 justify-self-end hover:bg-white hover:text-black duration-300 hidden md:inline-block">
-            CONTACTO
-        </a>
-        <button id="mobile-menu-button" class="md:hidden absolute top-6 right-6 text-white">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+---
+import HeaderLink from "./HeaderLink.astro"
+
+import MenuIcon from "./icons/Menu.astro"
+import CloseIcon from "./icons/Close.astro"
+
+---
+
+
+
+
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-16">
+      <HeaderLink
+        checkActive={false}
+        href={('/')}
+        class="relative z-10"
+      >
+        <img src="/src/components/cth-logo-02.png" class="absolute w-24 m-auto blur-sm opacity-0 transition-opacity duration-300 hover:opacity-50" />      
+        <img src="/src/components/cth-logo-02.png" class=" w-24" />      
+    </HeaderLink>
+      <nav
+        id="header-menu"
+        class="fixed w-full h-dvh inset-0 bg-[black]/90 md:text-xl lg:text-xl flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:flex-row md:translate-y-[initial]"
+      >
+        <HeaderLink class="text-xl text__glowing text-white" href={('/catalogo')}>
+          {('Servicios')}
+        </HeaderLink>
+        <HeaderLink class="text-xl text__glowing text-white" href={('/nosotros')}>
+          {('Nosotros')}
+        </HeaderLink>
+        <HeaderLink class=" md:right-0 text-white font-semibold text-xl border rounded-full border-black bg-red-700 px-4 py-2 justify-self-end hover:bg-white hover:text-black duration-300 md:inline-block" href={('/contacto')}>
+          {('Contacto')}
+        </HeaderLink>
         
+        
+        <a href="#header-nav" class="md:hidden absolute top-6 right-6">
+          <CloseIcon />
+        </a>
+
+
+      </nav>
+      <a href="#header-menu" class="md:hidden"><MenuIcon /></a>
     </div>
-
-</header>
-
-<!-- Menú móvil -->
-<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden transform translate-y-full transition-transform duration-300 ease-in-out">
-    <div class="h-full flex flex-col justify-between p-8">
-        <div class="flex justify-between items-center -mt-5">
-            <img src="/src/components/cth-logo-02.png" class="w-24" />
-            <button id="close-menu-button" class="text-white ">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        <nav class="flex-grow flex items-center justify-center">
-            <ul class="flex flex-col items-center -mt-20 gap-8 text-2xl">
-                <li><a class='text-white hover:text-red-600 hover:underline' href="/catalogo">SERVICIOS</a></li>
-                <li><a class='text-white hover:underline' href="/nosotros">NOSOTROS</a></li>
-                <li><a href="#" class="text-white font-semibold border rounded-full inline-block border-red-700 bg-red-700 px-6 py-3 hover:bg-white hover:text-black duration-300">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
-
-<script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const closeMenuButton = document.getElementById('close-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const pageContent = document.getElementById('page-content');
-
-    function openMenu() {
-        console.log('openMenu called');
-        if (mobileMenu) {
-            mobileMenu.classList.remove('hidden');
-            // Forzar un reflow antes de agregar la clase para activar la transición
-            mobileMenu.offsetHeight;
-            mobileMenu.classList.remove('translate-y-full');
-            document.body.classList.add('overflow-hidden');
-            if (pageContent) pageContent.classList.add('blur-sm');
-        }
-    }
-
-    function closeMenu() {
-        console.log('closeMenu called');
-
-        if (mobileMenu) {
-            mobileMenu.classList.add('translate-y-full');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-                if (pageContent) pageContent.classList.remove('blur-sm');
-            }, 300);
-        }
-    }
-
-    if (mobileMenuButton && closeMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', openMenu);
-        closeMenuButton.addEventListener('click', closeMenu);
-    }
-</script>
-
-<style>
-    /* Estas clases pueden ir en tu archivo de estilos global si lo prefieres */
-    .blur-sm {
-        filter: blur(4px);
-    }
-</style>
+  </header>
