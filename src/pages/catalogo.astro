@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/sections/Header.astro";
+import Footer from "@/sections/Footer.astro";
 ---
 
 <Layout title="CTH - Servicios">
@@ -15,13 +16,34 @@ import Header from "@/sections/Header.astro";
         <section class="flex justify-center items-center">
 
 
+            <ul class="p-4 rounded text-center space-y-4">
+                <li class="mt-2">
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/carpas">Carpas</a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/escenarios">Escenarios</a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/gazebos">Gazebos</a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/vallados">Vallados</a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/climatizacion">Climatización </a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/gradas-palcos">Gradas - Palcos</a>
+                </li>
+                <li>
+                    <a class="text-2xl hover:underline hover:text-red-500 text-white" href="/catalogo/mesas-sillas-vajilla">Mesas - Sillas - Vajilla</a>
+                </li>
+            </ul>
 
-        <ul class=" p-4 rounded">
-            <li>
-                <a class='hover:underline hover:text-red-700 text-white' href="/carpas">Carpas</a>
-            </li>
-        </ul>
+            
+            
     </section>
+    <Footer />
 		
 	</main>
 </Layout>

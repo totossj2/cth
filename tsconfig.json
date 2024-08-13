@@ -1,4 +1,11 @@
-{
+{ 
+    "astro": {
+      "routes": [
+        { "path": "/catalogo/carpas", "component": "src/pages/catalogo/carpas.astro"}
+      ]
+    }, 
+
+
     "compilerOptions": {
       "target": "es6",                          // Versión de ECMAScript que quieres como output (es6, es5, etc.)
       "module": "commonjs",                     // Sistema de módulos a utilizar (commonjs, esnext, etc.)
@@ -15,6 +22,8 @@
       "baseUrl": ".",                           // Base URL para la resolución de módulos
       "paths": {   
         "@/*" : ["./src/*"]                     // Mapear alias de rutas para importaciones
+
+
 
       }
     },
