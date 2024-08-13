@@ -1,7 +1,16 @@
 { 
     "astro": {
       "routes": [
-        { "path": "/catalogo/carpas", "component": "src/pages/catalogo/carpas.astro"}
+        { "path": "/catalogo/carpas", "component": "src/pages/catalogo/carpas.astro"}, 
+        { "path": "/catalogo/escenarios", "component": "src/pages/catalogo/escenarios.astro"}, 
+        { "path": "/catalogo/gazebos", "component": "src/pages/catalogo/gazebos.astro"}, 
+        { "path": "/catalogo/vallados", "component": "src/pages/catalogo/vallados.astro"}, 
+        { "path": "/catalogo/climatizacion", "component": "src/pages/catalogo/climatizacion.astro"}, 
+        { "path": "/catalogo/gradas-palcos", "component": "src/pages/catalogo/gradas-palcos.astro"}, 
+        { "path": "/catalogo/mesas-sillas-vajilla", "component": "src/pages/catalogo/mesas-sillas-vajilla.astro"}
+
+
+
       ]
     }, 
 

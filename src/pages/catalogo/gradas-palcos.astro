@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/sections/Header.astro";
+import Footer from "@/sections/Footer.astro";
+---
+
+<Layout title="CTH - Gradas Palcos">
+	<main>
+        <Header/>
+
+        <section class="relative bg-[url('/src/components/Hero.svg')] bg-cover bg-center bg-no-repeat w-full mt-20 h-[40vh]  justify-center flex items-center ">
+            <h1 class="text-white text-4xl md:text-6xl font-semibold">Gradas y Palcos</h1>
+        </section>
+
+        <section class="justify-center items-center mx-5 mt-6 ">
+            <div class="text-center space-y-4 ">
+                <h3 class="text-white font-semibold text-2xl md:text-3xl">Altura personalizable.</h3>
+                <p class="font-normal text-xl md:text-2xl ">Diversos escalones por cada modulo.</p>   
+            </div>
+    
+
+
+            <div class="text-center text-xl md:text-3xl mt-16">
+                <ul class="space-y-7">
+                    <li>
+                        <p class="font-normal" >Gradas con techo - apto para climarizar</p>
+                        <img src="/src/components/carpaBento.webp" class="w-5/6 md:w-2/6 m-auto rounded-sm" />
+                    </li>
+                    <li class="mt-44">
+                        <p class="font-normal" >Gradas sin techo</p>
+                        <img src="/src/components/carpaBento.webp" class="w-5/6 md:w-2/6 m-auto rounded-sm" />
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+
+
+
+
+        </section>  
+
+        <Footer/>
+
+
+
+    </main>
